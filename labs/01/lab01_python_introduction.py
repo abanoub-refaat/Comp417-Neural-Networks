@@ -75,3 +75,19 @@ for key, value in new_dec:
 
 print(new_dec.values())
 print(new_dec.keys())
+
+# pythonic features
+
+list = []
+for i in range(11):
+    if i % 2 == 0:
+        list.append(i)
+print(list)
+
+# list comprehension feature
+pythonic_list = [x for x in range(10) if x % 2 == 0]
+print(pythonic_list)
+
+# dictunary comprehension
+dic = {x:x*2 for x in range(10) if x % 2 == 0}
+print(dic)
