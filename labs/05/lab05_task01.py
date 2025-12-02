@@ -56,7 +56,11 @@ x = np.linspace(- limit, limit, 1000)
 y = np.linspace( - limit, limit, 1000)
 
 X, Y = np.meshgrid(x, y)
-Z = np.array([[preceptron((xx, yy)) for xx, yy in zip(row_x, row_y)] for row_x, row_y in zip(X, Y)])
+X_flat = X.flatten()
+Y_flat = Y.flatten()
+
+Z = np.array([[preceptron(p) for p in zip(X_flat, Y_flat)]])
+Z = Z.reshape(X.shape)
 
 plt.figure(figsize=(32, 15))
 plt.title("Desision Region formed by multiple neurons")
